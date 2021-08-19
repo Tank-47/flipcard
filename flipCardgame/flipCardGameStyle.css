@@ -1,0 +1,100 @@
+.cardGame{
+    margin: auto;
+    width: 30%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.card{
+   width: 100px;
+    height: 200px; 
+    position: relative;
+    perspective: 1500;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1500;
+    margin-left: 2%;
+    
+}
+
+@media only screen and (max-height: 720px) {
+  body {
+    background-color: lightblue;
+  }
+    .cardGame{
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+       
+    .card{
+   width: 80px;
+    height: 150px; 
+    position: relative;
+    perspective: 1500;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1500;
+    margin-left: 2%;   
+}
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    background-color: lightblue;
+  }
+    .cardGame{
+    margin: auto;
+    width: 40%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+       
+    .card{
+   width: 50px;
+    height: 100px; 
+    position: relative;
+    perspective: 1500;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1500;
+    margin-left: 2%;   
+}
+}
+
+.cover, .back{
+    perspective: 1500;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+   
+}
+
+.cover{
+    transform: rotateY(0deg);
+    background: red;
+}
+
+.back{
+    transform: rotateY(-180deg);
+}
+
+.back img{
+    width: 100%;
+    height: 100%;
+}
+
+

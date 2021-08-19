@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flip card game</title>
+    <link rel="stylesheet" type="text/css" href="flipCardGameStyle.css">
+</head>
+<body>
+  <div class="cardGame">
+       <div class="card" id="a1" onclick="flip('a1',0)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="1a.JPG">
+           </div>
+       </div>
+       <div class="card" id="a2" onclick="flip('a2',1)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="a3" onclick="flip('a3',2)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="a4" onclick="flip('a4',3)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       </div>
+       <br>
+       <div class="cardGame">
+       <div class="card" id="a5" onclick="flip('a5',4)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="a6" onclick="flip('a6',5)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="a7" onclick="flip('a7',6)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="a8" onclick="flip('a8',7)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+    </div>
+      <br>
+       <div class="cardGame">
+       <div class="card" id="b1" onclick="flip('b1',8)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b2" onclick="flip('b2',9)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+    
+    
+       <div class="card" id="b3" onclick="flip('b3',10)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b4" onclick="flip('b4',11)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       </div>
+       <br>
+       <div class="cardGame">
+       <div class="card" id="b5" onclick="flip('b5',12)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+
+       <div class="card" id="b6" onclick="flip('b6',13)">
+           <div class="cover">
+
+           </div>
+           <div class="back">  
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b7" onclick="flip('b7',14)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b8" onclick="flip('b8',15)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+    </div>
+       <!--<div class="card" id="b7" onclick="flip('b7',16)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b8" onclick="flip('b8',17)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b9" onclick="flip('b9',18)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>
+       <div class="card" id="b10" onclick="flip('b10',19)">
+           <div class="cover">
+
+           </div>
+           <div class="back">
+               <img src="">
+           </div>
+       </div>-->
+   
+    <script type="text/javascript">
+        var cards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+        var fliped = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        var count = 0;
+        var lastOne;
+        var lastOneID;
+        var matched=0;
+        var checked=1;
+        var atext="a";
+        var btext="b";
+        for(i=0;i<100;i++){
+            radomcards();
+        }
+        function radomcards(){
+            var temp,First,Second;
+            First = Math.floor(Math.random() * (cards.length-1));
+            Second = Math.floor(Math.random() * (cards.length-1));
+            temp = cards[First];
+            cards[First] = cards[Second];
+            cards[Second] = temp;
+        }
+        for(x=0;x<16;x++){
+            var id;
+            if(x<8){
+                id=atext+(x+1);
+            } 
+            else{
+                id=btext+(x+1-8)
+            }
+            switch(cards[x]){
+                    case(1):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="11.JPG";
+                            break;
+                    case(2):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="12.JPG"
+                            break;
+                    case(3):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="13.JPG"
+                            break;
+                    case(4):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="14.JPG"
+                            break;
+                    case(5):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="15.JPG"
+                            break;
+                    case(6):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="16.JPG"
+                            break;
+                    case(7):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="17.JPG"
+                            break;
+                    case(8):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="18.JPG"
+                            break;/*
+                    case(9):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="19.JPG"
+                            break;
+                    case(10):var card = document.getElementById(id);
+                            cardcovered = card.children;
+                            cardcovered[1].getElementsByTagName("img")[0].src="20.JPG"
+                            break;*/
+            }
+        }
+        function flip(cardID,num){
+            console.log("check"+checked);
+            if(fliped[num]==0){
+                if(checked==1){
+                    fliped[num]=1;
+                    count++;
+                    var card = document.getElementById(cardID);
+                   cardcovered = card.children;
+                   cardcovered[0].style.transform = "rotateY(180deg)";
+                   cardcovered[1].style.transform = "rotateY(0deg)";
+                        console.log("count"+count);
+                        if(count%2==0){
+                            checked=0;
+                            console.log("check"+checked);
+                            setTimeout(function(){check(cardID,num);},2000)
+                            setTimeout(function(){
+                                lastOne=num;
+                                lastOneID=cardID;
+                                checked=1;
+                            },2100)
+                        }
+                        else{
+                           lastOne=num; 
+                            lastOneID=cardID;
+                        }   
+                }
+            }
+        }   
+        function check(cardID,num){
+            console.log(cards[num]);
+            console.log(cards[lastOne]);
+            if(cards[lastOne]==cards[num]){
+                matched++;
+            }
+            else{
+                var card = document.getElementById(cardID);
+                cardcovered = card.children;
+                cardcovered[0].style.transform = "rotateY(0deg)";
+                cardcovered[1].style.transform = "rotateY(-180deg)";
+                fliped[num]=0;
+                var card = document.getElementById(lastOneID);
+                cardcovered = card.children;
+                cardcovered[0].style.transform = "rotateY(0deg)";
+                cardcovered[1].style.transform = "rotateY(-180deg)";
+                fliped[lastOne]=0;
+            }
+            
+            if(matched==10){
+                win();
+            }
+        }
+        
+        function win(){
+            
+        }
+	</script>
+</body>
+</html>
